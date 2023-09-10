@@ -1,0 +1,41 @@
+.toast-close-btn {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0;
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.toast-list {
+  position: fixed;
+  padding: 20px;
+  width: 100%;
+  max-width: 250px;
+  max-height: 100vh;
+}
+
+.toast-list--top-right {
+  top: 0;
+  right: 0;
+}
+
+@keyframes toast-to-top {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-list .toast {
+  animation: 0.5s toast-to-top;
+}

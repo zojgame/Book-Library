@@ -1,0 +1,37 @@
+.books_container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.books_container .book {
+  background: #f3f2f0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.book img {
+  width: 200px;
+}
+
+.book .category {
+  text-decoration: underline;
+  color: grey;
+}
+
+.book .title {
+  font-weight: 700;
+}
+
+.book .author {
+  color: grey;
+  font-size: 15px;
+}
+
+.book {
+  cursor: pointer;
+}

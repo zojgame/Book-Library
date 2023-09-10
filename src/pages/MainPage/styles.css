@@ -1,0 +1,26 @@
+.books_count {
+  min-height: 50px;
+}
+
+.content {
+  padding: 15px 50px;
+  color: black;
+  min-height: 500px;
+}
+
+.loading_icon {
+  font-size: 30px;
+}
+
+.pagination {
+  margin: 50px 0;
+}
+
+.pagination .loadmore_btn {
+  cursor: pointer;
+  user-select: none;
+  display: inline;
+  padding: 5px 15px;
+  border: 2px solid black;
+  border-radius: 3px;
+}

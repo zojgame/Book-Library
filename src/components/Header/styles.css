@@ -1,0 +1,66 @@
+header {
+  background-image: url("../../assets/books.jpg");
+  background-size: cover;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  font-size: 18px;
+}
+
+.filters div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.categories div,
+.sort-options div {
+  font-weight: 700;
+}
+
+select,
+option,
+input {
+  border: none;
+  padding: 5px 10px;
+}
+
+.filters div select {
+  font: inherit;
+  display: flex;
+  gap: 20px;
+}
+
+.search_input {
+  width: 40%;
+  height: 100%;
+  font-size: 17px;
+}
+
+.search_container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.search_container .search_icon {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 30px;
+  }
+}
