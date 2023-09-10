@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { LoadingOutlined } from "@ant-design/icons";
+
 import { BooksContainer, HeaderComponent, ToastList } from "../../components";
 import { useAppSelector, useActions, useToast } from "../../hooks";
 import { getIsLoading, getBooksInfo, getRequestState, getError } from "../../store";
@@ -5,28 +8,24 @@ import { RESULT_STEP } from "../../const";
 import { RequestType } from "../../types";
 import './styles.css';
 
-import { LoadingOutlined } from "@ant-design/icons";
-import { useEffect } from "react";
-
 const MainPage = () => {
     const booksInfo = useAppSelector(getBooksInfo)    
     const isLoading = useAppSelector(getIsLoading)
     const requestState = useAppSelector(getRequestState)
-    const { showToast, toasts, removeToast } = useToast()
     const errorMessage = useAppSelector(getError)
+    const { setBooks } = useActions()
+    const { showToast, toasts, removeToast } = useToast()
 
     useEffect(() => {
         if(errorMessage){
             showToast(errorMessage)                        
         }
         if(booksInfo?.totalItems === 0){
-            const message = `По запросу ${requestState.searchTitle} ничего не найдено`
+            const message = `Nothing was found by title "${requestState.searchTitle}" and filter "${requestState.category}"`
+            setBooks([])
             showToast(message)                        
         }
     }, [errorMessage, booksInfo]);
-
-    console.log('process.env', (import.meta.env.VITE_REACT_API_KEY))
-
 
     const { getAllBooks, setRequest } = useActions()
     

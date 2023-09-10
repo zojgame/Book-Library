@@ -1,6 +1,7 @@
 import { SearchOutlined } from '@ant-design/icons';
-import { useActions, useAppSelector } from '../../hooks';
 import { useState } from 'react';
+
+import { useActions, useAppSelector } from '../../hooks';
 import { RequestType } from '../../types';
 import { getRequestState } from '../../store';
 import { ORDER_BY_OPTION, CATEGORY_OPTIONS } from '../../const';

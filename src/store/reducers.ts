@@ -26,11 +26,13 @@ const booksReducer = createSlice({
     initialState,
     reducers: {
         setBooks: (state, action) => {
-            state.books = [...state.books, ...action.payload.items]
-            state.booksInfo = action.payload
+            state.books = action.payload
         },
         setRequest: (state, action) => {
             state.request = action.payload
+        },
+        setError: (state, action) => {
+            state.errorMessage = action.payload
         }
     },
     extraReducers: builder => {

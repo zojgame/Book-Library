@@ -5,8 +5,7 @@ import './styles.css'
 
 const BooksContainer = () => {
     const books = useAppSelector(getBooks)
-    const navigate = useNavigate()
-    
+    const navigate = useNavigate()    
 
     const handleOnBookClick = (id: string) => {
         return () => {

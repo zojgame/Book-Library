@@ -1,11 +1,11 @@
-import './styles.css'
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { LoadingOutlined } from '@ant-design/icons';
 
 import { useToast, useActions, useAppSelector } from "../../hooks";
 import { ToastList } from "../../components";
 import { getCurrentBook, getError, getIsLoading } from '../../store';
-import { LoadingOutlined } from '@ant-design/icons';
+import './styles.css'
 
 const DetailPage = () => {
     const { bookId }= useParams()
@@ -13,7 +13,7 @@ const DetailPage = () => {
     const currentBook = useAppSelector(getCurrentBook)
     const errorMessage = useAppSelector(getError);
     const isLoading = useAppSelector(getIsLoading);
-    const { getBookById } = useActions()
+    const { getBookById, setError } = useActions()
     const navigate = useNavigate()
     
     useEffect(() => {        
@@ -33,6 +33,7 @@ const DetailPage = () => {
     
     const handleOnGoBackBtnClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault()
+        setError('')
         navigate('../')
     }
 
@@ -41,9 +42,9 @@ const DetailPage = () => {
             <div className="header">
             </div>
             {isLoading && <div className='loading_icon_container'><LoadingOutlined className="loading_icon"/></div> }
-            {currentBook &&
+            {!isLoading &&
                 <div className="book_info">
-                    <section className={`${currentBook ?? 'book_image_container'}`}>
+                    <section className={`book_image_container ${currentBook ? 'container_background' : ''}`}>
                         <a href="#" onClick={handleOnGoBackBtnClick}>go back</a>
                         <img src={currentBook?.volumeInfo?.imageLinks?.thumbnail} alt={currentBook?.volumeInfo?.title} />
                     </section>

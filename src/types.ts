@@ -36,7 +36,6 @@ interface ThunkApiType {
     },
 
     rejectValue: string
-    // rejectValue: ValidationErrors | undefined | string
 }
 
 interface ValidationErrors{
@@ -82,5 +81,7 @@ interface IToastProps {
     onClose: () => void
 }
 
-export type { State, ApiDispatch, BookType, BooksInfoType, ValidationErrors, 
-    InitialState, ThunkApiType, RequestType, OptionType, ToastType, IToastListProps, IToastProps}
+export type { State, ApiDispatch, BookType, 
+            BooksInfoType, ValidationErrors, 
+            InitialState, ThunkApiType, RequestType,
+            OptionType, ToastType, IToastListProps, IToastProps}

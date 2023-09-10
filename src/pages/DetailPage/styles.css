@@ -30,12 +30,15 @@
   flex: 1;
   box-sizing: border-box;
   width: 400px;
-  background: #f3f2f0;
   display: flex;
   padding: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: start;
+}
+
+.book_image_container .container_background {
+  background: #f3f2f0;
 }
 
 .book_content {
